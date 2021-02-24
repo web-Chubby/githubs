@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>求数组中出现次数最多的数</title>
+</head>
+<body>
+	
+</body>
+</html>
+<script>
+	var arr = [2,2,3,3,3,3,7,3,3,4,5,2,2,2,2,2,2,2,2,2,2,2,2,7];
+	function MostNumber(argArr){
+	        //判断一个对象中有没有这个元素   有 添加次数  没有 创建元素数据
+	    var obj = {};
+	    var maxValue = '';
+	    var maxkey = '';
+	    argArr.forEach(item=>{
+	        if(obj[item]){
+	            obj[item] = ++obj[item];
+	        }else{
+	            obj[item] = 1;
+	        }
+	    })
+	    for(var key in obj){
+	        if(obj[key]>maxValue){
+	            maxValue = obj[key]
+	            maxkey = key
+	        }
+	    }
+	    return maxkey,maxValue;
+	    // console.log(obj);//取到值最大的key
+	}
+	console.log(MostNumber(arr))
+</script>
